@@ -1,3 +1,4 @@
+set encoding=UTF-8
 set hidden
 set guicursor=
 set relativenumber

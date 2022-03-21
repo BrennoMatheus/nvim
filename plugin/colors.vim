@@ -3,5 +3,5 @@ set termguicolors     " enable true colors support
 "let ayucolor="light"  " for light version of theme
 "let ayucolor="mirage" " for mirage version of theme
 "let ayucolor="dark"   " for dark version of theme
-colorscheme gruvbox
+colorscheme palenight
 :hi Normal guibg=NONE

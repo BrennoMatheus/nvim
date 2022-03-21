@@ -8,10 +8,12 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
+" Harpoon
+Plug 'ThePrimeagen/harpoon'
+
 " Color Schemes
-Plug 'morhetz/gruvbox'
-Plug 'danilo-augusto/vim-afterglow'
-Plug 'ayu-theme/ayu-vim'
+Plug 'drewtempelmeyer/palenight.vim'
+
 " Git
 Plug 'tpope/vim-fugitive'
 
@@ -19,22 +21,14 @@ Plug 'tpope/vim-fugitive'
 Plug 'glepnir/dashboard-nvim'
 Plug 'ThePrimeagen/vim-be-good'
 
-"Plug 'jiangmiao/auto-pairs'
-"Plug 'tpope/vim-surround'
-"Plug 'AndrewRadev/tagalong.vim'
-
-"Plug 'pangloss/vim-javascript'
-"Plug 'leafgarland/typescript-vim'
-"Plug 'peitalin/vim-jsx-typescript'
-
 call plug#end()
 
 let mapleader = " "
 
 " Fugitive remaps
-nmap <leader>gj :diffget //3<CR>
-nmap <leader>gf :diffget //2<CR>
 nmap <leader>gs :G<CR>
+
+nnoremap <c-n> :%s///g<left><left>
 
 :tnoremap <A-h> <C-\><C-N><C-w>h
 :tnoremap <A-j> <C-\><C-N><C-w>j
@@ -49,19 +43,20 @@ nmap <leader>gs :G<CR>
 :nnoremap <A-k> <C-w>k
 :nnoremap <A-l> <C-w>l
 
-" Source Vim configuration file and install plugins
-" nnoremap <silent><leader>1 :source ./init.vim \| :PlugInstall<CR>
+" Terminal commands
+" ueoa is first through fourth finger left hand home row.
+" This just means I can crush, with opposite hand, the 4 terminal positions
+"
+" These functions are stored in harpoon.  A plugn that I am developing
+nnoremap <silent><leader>a :lua require("harpoon.mark").add_file()<CR>
+nnoremap <silent><C-e> :lua require("harpoon.ui").toggle_quick_menu()<CR>
+nnoremap <silent><leader>tc :lua require("harpoon.cmd-ui").toggle_quick_menu()<CR>
 
-" set filetypes as typescriptreact
-" autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
-
-" autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
-" autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
-
-vmap <leader>y "+y
-vmap <leader>d "+d
-nmap <leader>p "+p
-nmap <leader>P "+P
-vmap <leader>p "+p
-vmap <leader>P "+P
-
+nnoremap <silent><C-h> :lua require("harpoon.ui").nav_file(1)<CR>
+nnoremap <silent><C-t> :lua require("harpoon.ui").nav_file(2)<CR>
+nnoremap <silent><C-n> :lua require("harpoon.ui").nav_file(3)<CR>
+nnoremap <silent><C-s> :lua require("harpoon.ui").nav_file(4)<CR>
+nnoremap <silent><leader>tu :lua require("harpoon.term").gotoTerminal(1)<CR>
+nnoremap <silent><leader>te :lua require("harpoon.term").gotoTerminal(2)<CR>
+nnoremap <silent><leader>cu :lua require("harpoon.term").sendCommand(1, 1)<CR>
+nnoremap <silent><leader>ce :lua require("harpoon.term").sendCommand(1, 2)<CR>
