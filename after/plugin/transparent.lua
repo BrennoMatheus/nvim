@@ -1,1 +1,1 @@
-require 'transparent'.setup { enable = true }
+require('transparent').setup {}
