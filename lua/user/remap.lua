@@ -10,7 +10,7 @@ vim.g.maplocalleader = ' '
 
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
-vim.keymap.set('n', '<leader>e', ':E<cr>')
+vim.keymap.set('n', '<leader>e', ':Explore<cr>')
 
 vim.keymap.set('n', '<A-h>', '<C-w>h', opts)
 vim.keymap.set('n', '<A-j>', '<C-w>j', opts)
