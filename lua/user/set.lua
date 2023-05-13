@@ -2,6 +2,7 @@
 -- See `:help vim.o`
 --
 -- Set highlight on search
+vim.o.guicursor = ""
 vim.o.hlsearch = false
 
 -- Relative numbers
@@ -17,11 +18,19 @@ vim.o.mouse = 'a'
 vim.o.breakindent = true
 
 -- Save undo history
+vim.o.swapfile = false
+vim.o.backup = false
+vim.o.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.o.undofile = true
 vim.o.undofile = true
 
 -- Case insensitive searching UNLESS /C or capital in search
 vim.o.ignorecase = true
 vim.o.smartcase = true
+
+-- Improving searchs
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
 
 -- Decrease update time
 vim.o.updatetime = 250
@@ -33,4 +42,4 @@ vim.o.termguicolors = true
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
-vim.opt.scrolloff = 8
+vim.o.scrolloff = 8
