@@ -46,6 +46,7 @@ require('packer').startup(function(use)
 
   use 'xiyaowong/nvim-transparent'
   use 'ThePrimeagen/harpoon'
+  use 'andweeb/presence.nvim'
 
   -- Git related plugins
   use 'tpope/vim-fugitive'
