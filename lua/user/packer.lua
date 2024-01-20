@@ -33,7 +33,10 @@ require('packer').startup(function(use)
       { 'rafamadriz/friendly-snippets' },
 
       -- Useful status updates for LSP
-      { 'j-hui/fidget.nvim' },
+      {
+        'j-hui/fidget.nvim',
+        tag = 'legacy',
+      },
     },
   }
 
