@@ -8,7 +8,13 @@ return {
     },
 
     config = function()
-        require('telescope').setup({})
+        require('telescope').setup({
+            defaults = {
+                file_ignore_patterns = {
+                    "node_modules"
+                }
+            }
+        })
 
         -- See `:help telescope.builtin`
         vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles,
